@@ -80,10 +80,9 @@ The site uses CSS variables for easy theming. You can adjust the core colors in 
 
 ## 📞 Contact
 
-**Rio Holdings (Pvt) Ltd**  
-Sri Jayawardenepura Kotte, Sri Lanka  
-📧 info@rioholdings.lk  
-☎️ 077 710 0729
+**neuraCom Solutions**  
+📧 neuracomjust@gmail.com  
+☎️ +94 77 134 5911
 
 ---
-*© 2026 Rio Holdings (Pvt) Ltd. All Rights Reserved.*
+*© 2026 neuraCom Solutions. All Rights Reserved.*
