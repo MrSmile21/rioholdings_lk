@@ -1,0 +1,25 @@
+# Security: Disable directory browsing
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. Force HTTPS (Uncomment if you have SSL installed and want to force it)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # 2. To remove .php extension from URL
+    # Rewrite for example.com/page to example.com/page.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+    # 3. Redirect external .php requests to clean URL (Avoids duplicate content)
+    # If someone visits /about.php, they are redirected to /about
+    RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+    RewriteRule ^ /%1 [R=301,L,NE]
+</IfModule>
+
+# Custom Error Pages
+# Update this path if your site is in a subdirectory (e.g., /rio_hol/index.php)
+ErrorDocument 404 /index.php
